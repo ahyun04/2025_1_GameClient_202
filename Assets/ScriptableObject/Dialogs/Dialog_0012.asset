@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8faad6ccdadbeb4b8cf244d2f925ea1, type: 3}
+  m_Name: Dialog_0012
+  m_EditorClassIdentifier: 
+  id: 12
+  charaterName: "\uC0C1\uC778"
+  text: "\uC548\uB155\uD558\uC138\uC694, \uC5EC\uD589\uC790\uB2D8! \uD639\uC2DC \uBB3C\uAC74\uC744
+    \uAD6C\uACBD\uD558\uC2DC\uACA0\uC5B4\uC694?"
+  nextid: -1
+  choice:
+  - {fileID: 11400000, guid: f9f0c04b51aa9ee46bffe7e33c71847e, type: 2}
+  - {fileID: 11400000, guid: 5378b7608877c414383e98fa7fd3000a, type: 2}
+  portrait: {fileID: 0}
+  portraitPath: Characters/Merchant
