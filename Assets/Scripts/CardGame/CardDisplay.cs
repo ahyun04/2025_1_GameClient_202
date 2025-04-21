@@ -15,9 +15,9 @@ public class CardDisplay : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro descriptionText;
 
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector3 originalPosition;
-
+    private CardManager cardManager;
     public LayerMask enermLayer;
     public LayerMask playerLayer;
 
@@ -25,6 +25,8 @@ public class CardDisplay : MonoBehaviour
     {
         playerLayer = LayerMask.GetMask("Player");
         enermLayer = LayerMask.GetMask("Enemy");
+
+        cardManager = FindAnyObjectByType<CardManager>();
 
         SetupCard(cardData);
     }
@@ -76,6 +78,15 @@ public class CardDisplay : MonoBehaviour
 
     private void OnMouseUp()
     {
+        CharacterStats playerStats = FindAnyObjectByType<CharacterStats>();
+        if(playerStats != null || playerStats.currenMana < cardData.manaCost)
+        {
+            Debug.Log($"마나가 부족합니다 !(필요 : {cardData.manaCost}, 현재 : {playerStats?.currenMana ?? 0})");
+            transform.position = originalPosition;
+            return;
+        }
+
+
         isDragging = false;
         //레이캐스트
         RaycastHit hit;
@@ -102,7 +113,7 @@ public class CardDisplay : MonoBehaviour
         }
         else if(Physics.Raycast(ray,out hit, Mathf.Infinity,playerLayer))
         {
-            CharacterStats playerStats = hit.collider.GetComponent<CharacterStats>();
+            //CharacterStats playerStats = hit.collider.GetComponent<CharacterStats>();
 
             if(playerStats != null)
             {
@@ -118,14 +129,33 @@ public class CardDisplay : MonoBehaviour
                 }
             }
         }
+        else if( cardManager != null )
+        {
+            float disToDiscard = Vector3.Distance(transform.position, cardManager.discardPosition.position);
+            if( disToDiscard < 2.0f )
+            {
+                cardManager.DiscardCard(cardIndex);
+                return;
+            }
+        }
+
+        //버린 카드 더미 근처에 드롭했는지 검사
 
         if(!cardUsed)
         {
             transform.position = originalPosition;
+            //손패 재정렬
+            cardManager.ArrangeHand();
         }
         else
         {
-            Destroy(gameObject);
+            //카드를 사용했다면 버린 카드 더미로 이동
+            if(cardManager != null)
+                cardManager.DiscardCard(cardIndex);
+
+            //카드 사용시 마나 소모
+            playerStats.UseMana(cardData.manaCost);
+            Debug.Log($"마나를 {cardData.manaCost} 사용 했습니다 (남은 마나 : {playerStats.currenMana})");
         }
     }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef318ab746b08643bab365d71faa8f5, type: 3}
-  m_Name: Card_002
+  m_Name: Card_004
   m_EditorClassIdentifier: 
-  cardName: Heal
+  cardName: Utility
   description: asd
-  artwork: {fileID: 21300000, guid: feb8709f10385a94095b55fe8d0f625c, type: 3}
+  artwork: {fileID: 21300000, guid: 406984ac0d0fc2c4bbaf906048f7c43e, type: 3}
   manaCost: 0
-  effectAmount: 7
-  cardType: 1
+  effectAmount: 9
+  cardType: 3
