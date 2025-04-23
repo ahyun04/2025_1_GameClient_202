@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef318ab746b08643bab365d71faa8f5, type: 3}
   m_Name: Card_002
   m_EditorClassIdentifier: 
-  cardName: Heal
-  description: asd
+  cardName: "\uD68C\uBCF5"
+  description: "\uD50C\uB808\uC774\uC5B4 \uCCB4\uB825\uC744 \uD68C\uBCF5\uD55C\uB2E4"
   artwork: {fileID: 21300000, guid: feb8709f10385a94095b55fe8d0f625c, type: 3}
-  manaCost: 0
+  manaCost: 1
   effectAmount: 7
   cardType: 1

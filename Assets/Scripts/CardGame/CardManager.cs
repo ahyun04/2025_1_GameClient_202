@@ -18,13 +18,23 @@ public class CardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        ShuffleDeck();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.D))                 //D 키를 누르면 카드 드로우
+        {
+            DrawCard();
+        }
 
+        if (Input.GetKeyDown(KeyCode.F))                //F 키를 누르면 버린 카드를 덱으로 되돌리고 섞기 
+        {
+            ReturnDiscardsToDeck();
+        }
+
+        ArrangeHand();
     }
 
     // 덱 섞기

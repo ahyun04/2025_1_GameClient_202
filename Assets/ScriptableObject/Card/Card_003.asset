@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef318ab746b08643bab365d71faa8f5, type: 3}
   m_Name: Card_003
   m_EditorClassIdentifier: 
-  cardName: Buff
-  description: asd
-  artwork: {fileID: 21300000, guid: 098dafe51c34c254286ed83a925ed4d5, type: 3}
-  manaCost: 0
+  cardName: "\uD654\uC0B4"
+  description: "\uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4"
+  artwork: {fileID: 21300000, guid: 530bcabb1501d8148a19a77465ecac03, type: 3}
+  manaCost: 2
   effectAmount: 5
-  cardType: 2
+  cardType: 0

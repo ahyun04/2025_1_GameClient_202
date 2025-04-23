@@ -8,69 +8,73 @@ public class CharacterStats : MonoBehaviour
 {
     public string characterName;
     public int maxHealth = 100;
-    public int currenHealth;
+    public int currentHealth;
 
     public Slider healthBar;
     public TMP_Text healthText;
 
     public int maxMana = 10;
-    public int currenMana = 10;
+    public int currentMana = 10;
     public Slider manaBar;
     public TMP_Text manaText;
 
     // Start is called before the first frame update
     void Start()
     {
-        currenMana = maxMana;
+        currentMana = maxMana;
         UpdateUI();
     }
 
     public void TakeDamage(int damage)
     {
-        currenHealth -= damage;
+        currentHealth -= damage;
     }
 
     public void Heal(int amount)
     {
-        currenHealth += amount;
+        currentHealth += amount;
     }
 
     public void UseMana(int amount)
     {
-        currenMana -= amount;
-        if(currenMana < 0)
+        currentMana -= amount;
+        if (currentMana < 0)
         {
-            currenMana = 0;
+            currentMana = 0;
         }
         UpdateUI();
     }
 
     public void GainMana(int amount)
     {
-        currenMana += amount;
-        if(currenMana > maxMana)
+        currentMana += amount;
+        if (currentMana > maxMana)
         {
-            currenMana = maxMana;
+            currentMana = maxMana;
         }
         UpdateUI();
     }
+
     private void UpdateUI()
     {
-        if(healthBar != null)
+        if (healthBar != null)
         {
-            healthBar.value = (float)currenHealth / maxHealth;
+            healthBar.value = (float)currentHealth / maxHealth;
         }
-        if(healthText != null)
+
+        if (healthText != null)
         {
-            healthText.text = $"{currenHealth} / {maxHealth}";
+            healthText.text = $"{currentHealth} / {maxHealth}";
         }
-        if(manaBar != null)
+
+        if (manaBar != null)
         {
-            manaBar.value = (float)currenMana / maxMana;
+            manaBar.value = (float)currentMana / maxMana;
         }
-        if(manaText != null)
+
+        if (manaText != null)
         {
-            manaText.text = $"{currenMana} / {maxMana}";
+            manaText.text = $"{currentMana} / {maxMana}";
         }
     }
 }
