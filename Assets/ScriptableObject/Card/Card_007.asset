@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef318ab746b08643bab365d71faa8f5, type: 3}
   m_Name: Card_007
   m_EditorClassIdentifier: 
+  additionalEffects:
+  - effectType: 3
+    effectAmount: 1
   cardName: "\uB9C8\uB098 \uCD94\uAC00"
-  description: "\uB9C8\uB098 \uCD94\uAC001 \uB4DC\uB85C\uC6B01"
+  description: "\uB9C8\uB098 \uCD94\uAC001"
   artwork: {fileID: 21300000, guid: 21df9195ed43b004394e6d7913b03149, type: 3}
   manaCost: 0
   effectAmount: 1

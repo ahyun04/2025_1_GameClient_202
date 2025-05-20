@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class AdditionalEffect
 {
     public CardData.AdditionalEffectType effectType;

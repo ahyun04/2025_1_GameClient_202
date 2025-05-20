@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef318ab746b08643bab365d71faa8f5, type: 3}
   m_Name: Card_006
   m_EditorClassIdentifier: 
+  additionalEffects:
+  - effectType: 2
+    effectAmount: 1
   cardName: "\uC18C\uAC01"
   description: "\uCE74\uB4DC \uD55C\uC7A5\uC744 \uBC84\uB9B0\uB2E4"
   artwork: {fileID: 21300000, guid: 8ec5b52b09d90074a83d61c1334190f9, type: 3}
